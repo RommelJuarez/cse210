@@ -30,7 +30,7 @@ class Program
             }
 
         }
-        avg=sum/((numbers.Count)-1);
+        avg=(double)sum/((numbers.Count)-1);
         Console.WriteLine($"The sum is: {sum}");
         Console.WriteLine($"The average is: {avg}");
         Console.WriteLine($"The max number is : {maxNumber}");
