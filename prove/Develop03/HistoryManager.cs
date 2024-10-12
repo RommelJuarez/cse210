@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 public class HistoryManager
 {
-    public Stack<List<bool>> _history;  
+    private Stack<List<bool>> _history;
 
     public HistoryManager()
     {
@@ -11,26 +11,27 @@ public class HistoryManager
 
     public void SaveState(List<Word> words)
     {
+
         List<bool> currentState = new List<bool>();
         foreach (var word in words)
         {
-            currentState.Add(word._isHidden); 
+            currentState.Add(word.isHidden());
         }
-        _history.Push(currentState); 
+        _history.Push(currentState);
     }
 
-  
+
     public bool RestorePreviousState(List<Word> words)
     {
         if (_history.Count == 0) return false;
 
-        List<bool> previousState = _history.Pop(); 
-       
+        List<bool> previousState = _history.Pop();
+
         for (int i = 0; i < words.Count; i++)
         {
             words[i].SetHiddenState(previousState[i]);
         }
 
-        return true; 
+        return true;
     }
 }

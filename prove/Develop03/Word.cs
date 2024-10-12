@@ -2,8 +2,8 @@ using System;
 using System.Linq;
 public class Word
 {
-    public string _text { get; private set; }
-    public bool _isHidden { get; private set; }
+    private string _text;
+    private bool _isHidden;
 
     public Word(string text)
     {
@@ -24,8 +24,8 @@ public class Word
     {
         _isHidden = isHidden;
     }
-
-
-
-
+    public bool isHidden()
+    {
+        return _isHidden;
+    }
 }

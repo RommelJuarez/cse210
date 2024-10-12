@@ -1,8 +1,8 @@
 using System;
 public class Scripture
 {
-    public Reference _reference { get; private set; }
-    public List<Word> _words;
+    private Reference _reference;
+    private List<Word> _words;
 
     public Scripture(Reference reference, string text)
     {
@@ -16,6 +16,10 @@ public class Scripture
         }
 
     }
+    public List<Word> GetWords()
+    {
+        return _words;
+    }
     public void HideWords(int count)
     {
         Random random = new Random();
@@ -23,7 +27,7 @@ public class Scripture
         do
         {
             int index = random.Next(_words.Count);
-            if (!_words[index]._isHidden)
+            if (!_words[index].isHidden())
             {
                 _words[index].Hide();
                 _flag++;
@@ -47,7 +51,7 @@ public class Scripture
     {
         foreach (var word in _words)
         {
-            if (!word._isHidden)
+            if (!word.isHidden())
             {
                 return false;
             }

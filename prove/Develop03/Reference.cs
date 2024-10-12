@@ -2,10 +2,10 @@ using System;
 
 public class Reference
 {
-    public string _book { get; private set; }
-    public int _chapter { get; private set; }
-    public int _verse { get; private set; }
-    public int _endVerse { get; private set; }
+    private string _book;
+    private int _chapter;
+    private int _verse;
+    private int _endVerse;
 
     public Reference(string book, int chapter, int verse)
     {
