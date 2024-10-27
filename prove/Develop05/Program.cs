@@ -34,7 +34,8 @@ class Program
 
                 case "3":
                     Console.Clear();
-                    ListingActivity listingActivity = new ListingActivity();  
+                    ListingActivity listingActivity = new ListingActivity(); 
+                    break; 
 
                 case "4":
                     Console.Clear();
